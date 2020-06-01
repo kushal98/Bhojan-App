@@ -1,0 +1,51 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Lilita One';
+}
+
+body {
+    background-color: #f8f8f8;
+  }
+
+.text-center{
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-light {
+  background-color: #c6c7cb!important;
+}
+
+.navbar-expand-lg .navbar-nav {
+  margin-right: 30px !important;
+  position: absolute;
+  right: 0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+  }
+  
+.btn-primary:hover {
+    color: #fff;
+    background-color: #78cfba;
+    border-color: #78cfba;
+  }
+  
+
+
+
+@media only screen and (max-width: 700px) {
+    
+    
+    .text-center{
+        text-align: center!important;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+      position: relative;
+    }
+}

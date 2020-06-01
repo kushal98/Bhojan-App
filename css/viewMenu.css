@@ -1,0 +1,71 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Lilita One';
+}
+
+body {
+    background-color: #f8f8f8;
+  }
+
+.text-center{
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-light {
+  background-color: #c6c7cb!important;
+}
+
+.navbar-expand-lg .navbar-nav {
+  margin-right: 30px !important;
+  position: absolute;
+  right: 0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+  }
+  
+.btn-primary:hover {
+    color: #fff;
+    background-color: #78cfba;
+    border-color: #78cfba;
+  }
+  
+.menu-table{
+    align-items: center;
+    margin: auto;
+    width: 80%;
+}
+
+table{
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+@media only screen and (max-width: 700px) {
+    
+    
+    .text-center{
+        text-align: center!important;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+      position: relative;
+    }
+}
