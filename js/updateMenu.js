@@ -149,7 +149,7 @@ $(document).ready(function(){
 
         var elem = `   
         <form class="form-add-item" id="update_cat_form"  style="align-items:center" >
-            <h3 class="head">Add  Item </h3>
+            <h3 class="head">Update  Item </h3>
             <br/>
             <label for="selectCat" class="">Select Category</label>
             <input type="text" name="category" list="selectCategoryList" id="selectCategory" class="form-control" placeholder=" Select Category" required>

@@ -8,7 +8,8 @@ body {
     background-color: #f8f8f8;
   }
 
-.text-center{
+  .text-center{
+    text-align: center!important;
     display: flex;
     flex-direction: column;
 }
@@ -24,28 +25,108 @@ body {
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #000;
-    border-color: #000;
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #78cfba;
+  border-color: #78cfba;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+}
+
+#delete-menu {
+    width: 80%;
+    margin: auto;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+}
+
+span > :first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin: auto;
   }
   
-.btn-primary:hover {
+  .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+
+  .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
     background-color: #78cfba;
     border-color: #78cfba;
-  }
-  
+}
 
-
+#myModalDetails {
+  margin-left: 35%;
+}
 
 @media only screen and (max-width: 700px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 80%;
+        margin: auto;
+    }
     
-    
+    .main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+    }
+
+    #delete-menu {
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
     .text-center{
         text-align: center!important;
     }
 
+    span > :first-child {
+        display: flex;
+        flex-direction: column;
+    }
+
     .navbar-expand-lg .navbar-nav {
       position: relative;
+    }
+
+    #myModalDetails {
+      margin-left: 15%;
     }
 }
