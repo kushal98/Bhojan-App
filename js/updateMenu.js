@@ -11,6 +11,7 @@ $(document).ready(function(){
     $("#logout").click(function(e){
         e.preventDefault();
         sessionStorage.removeItem("authorization");
+        sessionStorage.clear();
         window.location.pathname = "Bhojan-App/index.html";
      });
 
@@ -57,7 +58,11 @@ $(document).ready(function(){
                         console.log("success");
                     },
                     401: function() {
-                        alert("Please enter correct username and password! ")
+                        window.location.pathname = "Bhojan-App/index.html";
+                        sessionStorage.clear();
+                    },
+                    500: function(){
+                        $("#myModalAdmin").modal('show');
                     }
 
                 }
@@ -112,13 +117,20 @@ $(document).ready(function(){
                     "category": $('#updateCategoryInput').val()
                 }),
                 statusCode :{
-                200: function() {
-                    $("#myModalOk").modal('show');
-                    console.log("success");
-                },
-                401: function() {
-                    alert("Please enter correct username and password! ")
-                }
+                    200: function() {
+                        $("#myModalOk").modal('show');
+                        console.log("success");
+                        setTimeout(function(){
+                            window.location.pathname = "Bhojan-App/html/updateMenu.html";
+                        },2000);
+                    },
+                    401: function() {
+                        window.location.pathname = "Bhojan-App/index.html";
+                        sessionStorage.clear();
+                    },
+                    500: function(){
+                        $("#myModalAdmin").modal('show');
+                    }
                 }
                 ,
                 contentType:"application/json; charset=utf-8",
@@ -156,7 +168,7 @@ $(document).ready(function(){
                 <datalist id="selectCategoryList">
                 </datalist>
             <label for="selectItem" class="">Select Item</label>
-            <input type="text" name="category" list="selectItemList" id="selectItem" class="form-control" placeholder=" Select Category" required>
+            <input type="text" name="category" list="selectItemList" id="selectItem" class="form-control" placeholder=" Select Item" required>
                 <datalist id="selectItemList">
                 </datalist>
             <label for="AddItemName" class="">Add Item Name</label>
@@ -186,7 +198,11 @@ $(document).ready(function(){
                         console.log("success");
                     },
                     401: function() {
-                        alert("Please enter correct username and password! ")
+                        window.location.pathname = "Bhojan-App/index.html";
+                        sessionStorage.clear();
+                    },
+                    500: function(){
+                        $("#myModalAdmin").modal('show');
                     }
 
                 }
@@ -264,9 +280,16 @@ $(document).ready(function(){
                     200: function() {
                         $("#myModalOk").modal('show');
                         console.log("success");
+                        setTimeout(function(){
+                            window.location.pathname = "Bhojan-App/html/updateMenu.html";
+                        },2000);
                     },
                     401: function() {
-                        alert("Please enter correct username and password! ")
+                        window.location.pathname = "Bhojan-App/index.html";
+                        sessionStorage.clear();
+                    },
+                    500: function(){
+                        $("#myModalAdmin").modal('show');
                     }
                 }
                 ,

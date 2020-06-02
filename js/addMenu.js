@@ -11,6 +11,7 @@ $(document).ready(function(){
     $("#logout").click(function(e){
         e.preventDefault();
         sessionStorage.removeItem("authorization");
+        sessionStorage.clear();
         window.location.pathname = "Bhojan-App/index.html";
      });
 
@@ -58,19 +59,25 @@ $(document).ready(function(){
                     "category": $('#addCategoryInput').val()
                 }),
                 statusCode :{
-                200: function() {
-                    $("#myModalOk").modal('show');
-                    console.log("success");
-                },
-                401: function() {
-                    alert("Please enter correct username and password! ")
-                }
+                    200: function() {
+                        $("#myModalOk").modal('show');
+                        console.log("success");
+                        setTimeout(function(){
+                            window.location.pathname = "Bhojan-App/html/addMenu.html";
+                        },2000);
+                    },
+                    401: function() {
+                        window.location.pathname = "Bhojan-App/index.html";
+                        sessionStorage.clear();
+                    },
+                    500: function(){
+                        $("#myModalAdmin").modal('show');
+                    }
                 }
                 ,
                 contentType:"application/json; charset=utf-8",
                 success: function(data, textStatus, jqXHR)
                 {
-                    
                 },
                 error: function (e)
                 {
@@ -128,7 +135,11 @@ $(document).ready(function(){
                         console.log("success");
                     },
                     401: function() {
-                        alert("Please enter correct username and password! ")
+                        window.location.pathname = "Bhojan-App/index.html";
+                        sessionStorage.clear();
+                    },
+                    500: function(){
+                        $("#myModalAdmin").modal('show');
                     }
 
                 }
@@ -186,16 +197,23 @@ $(document).ready(function(){
                     200: function() {
                         $("#myModalOk").modal('show');
                         console.log("success");
+                        setTimeout(function(){
+                            window.location.pathname = "Bhojan-App/html/addMenu.html";
+                        },2000);
                     },
                     401: function() {
-                        alert("Please enter correct username and password! ")
+                        window.location.pathname = "Bhojan-App/index.html";
+                        sessionStorage.clear();
+                    },
+                    500: function(){
+                        $("#myModalAdmin").modal('show');
                     }
                 }
                 ,
                 contentType:"application/json; charset=utf-8",
                 success: function(data, textStatus, jqXHR)
                 {
-                    
+                    window.location.pathname = "Bhojan-App/html/addMenu.html";
                 },
                 error: function (e)
                 {

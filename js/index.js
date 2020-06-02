@@ -25,10 +25,14 @@ if(navigator.onLine)
                 }),
                 statusCode :{
                    200: function() {
-                      console.log("success");
+                        console.log("success");
                    },
                    401: function() {
-                      alert("Please enter correct username and password! ")
+                        window.location.pathname = "Bhojan-App/index.html";
+                        sessionStorage.clear();
+                   },
+                   500: function(){
+                       $("#myModalAdmin").modal('show');
                    }
                 }
                 ,
