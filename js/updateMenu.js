@@ -46,7 +46,7 @@ $(document).ready(function(){
         if(navigator.onLine){
             var auth_decode = JSON.parse(atob(sessionStorage.getItem("authorization").split(".")[1]));
             var res_id = auth_decode['sub'];
-            var url = 'http://bhojan.dekhlo.online:8080/api/v1/menu/' + res_id;
+            var url = 'https://bhojan.dekhlo.online:8080/api/v1/menu/' + res_id;
             $.ajax({
                 url:url,
                 type:"GET",
@@ -108,7 +108,7 @@ $(document).ready(function(){
 
         if(navigator.onLine){
             $.ajax({
-                url:"http://bhojan.dekhlo.online:8080/api/v1/restaurant/category/" + $('#selectCategory').val(),
+                url:"https://bhojan.dekhlo.online:8080/api/v1/restaurant/category/" + $('#selectCategory').val(),
                 type:"PUT",
                 beforeSend: function(xhr){
                         xhr.setRequestHeader('authorization', sessionStorage.getItem("authorization"));
@@ -186,7 +186,7 @@ $(document).ready(function(){
         if(navigator.onLine){
             var auth_decode = JSON.parse(atob(sessionStorage.getItem("authorization").split(".")[1]));
             var res_id = auth_decode['sub'];
-            var url = 'http://bhojan.dekhlo.online:8080/api/v1/menu/' + res_id;
+            var url = 'https://bhojan.dekhlo.online:8080/api/v1/menu/' + res_id;
             $.ajax({
                 url:url,
                 type:"GET",
@@ -266,7 +266,7 @@ $(document).ready(function(){
 
         if(navigator.onLine){
             $.ajax({
-                url:"http://bhojan.dekhlo.online:8080/api/v1/restaurant/category/" + $('#selectCategory').val() + "/item/" + $('#selectItem').val(),
+                url:"https://bhojan.dekhlo.online:8080/api/v1/restaurant/category/" + $('#selectCategory').val() + "/item/" + $('#selectItem').val(),
                 type:"PUT",
                 beforeSend: function(xhr){
                         xhr.setRequestHeader('authorization', sessionStorage.getItem("authorization"));

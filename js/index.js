@@ -17,7 +17,7 @@ if(navigator.onLine)
             event.stopPropagation();
             event.preventDefault();
             $.ajax({
-                url:"http://bhojan.dekhlo.online:8080/api/v1/restaurant/login",
+                url:"https://bhojan.dekhlo.online:8080/api/v1/restaurant/login",
                 type:"POST",
                 data:JSON.stringify({
                     "username": $('#inputEmail').val(),
