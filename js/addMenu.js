@@ -82,6 +82,7 @@ $(document).ready(function(){
                 contentType:"application/json; charset=utf-8",
                 success: function(data, textStatus, jqXHR)
                 {
+                    
                 },
                 error: function (e)
                 {
@@ -204,7 +205,6 @@ $(document).ready(function(){
                         $("#myModalLoading").modal('hide');
                         $("#myModalOk").modal('show');
                         console.log("success");
-                        $('#selectCategory').val('');
                         $('#addItemName').val('');
                         $('#addItemPrice').val('');
                     },
@@ -226,7 +226,6 @@ $(document).ready(function(){
                 contentType:"application/json; charset=utf-8",
                 success: function(data, textStatus, jqXHR)
                 {
-                    window.location.pathname = "Bhojan-App/html/addMenu.html";
                 },
                 error: function (e)
                 {
