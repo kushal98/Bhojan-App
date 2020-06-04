@@ -123,6 +123,7 @@ $(document).ready(function(){
                         $("#myModalOk").modal('show');
                         console.log("success");
                         $('#selectCategory').val('');
+                        $('#updateCategoryInput').val('');
                     },
                     401: function() {
                         $("#myModalLoading").modal('hide');
@@ -290,6 +291,8 @@ $(document).ready(function(){
                         console.log("success");
                         $('#selectCategory').val('');
                         $('#selectItem').val('');
+                        $('#updateItemName').val('');
+                        $('#updateItemPrice').val('');
                     },
                     401: function() {
                         $("#myModalLoading").modal('hide');

@@ -204,6 +204,7 @@ $(document).ready(function(){
                         $("#myModalLoading").modal('hide');
                         $("#myModalOk").modal('show');
                         console.log("success");
+                        $('#selectCategory').val('');
                         $('#addItemName').val('');
                         $('#addItemPrice').val('');
                     },
