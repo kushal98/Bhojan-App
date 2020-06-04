@@ -114,11 +114,12 @@ $(document).ready(function(){
                 },
                 statusCode :{
                     200: function() {
-                        $("#myModalLoading").modal('hide');
-                        setTimeout(function(){}, 2000);
-                        $("#myModalOk").modal('show');
-                        console.log("success");
-                        $('#selectCategory').val('');
+                        setTimeout(function(){
+                            $("#myModalLoading").modal('hide');
+                            $("#myModalOk").modal('show');
+                            console.log("success");
+                            $('#selectCategory').val('');
+                        }, 2000);
                     },
                     401: function() {
                         $("#myModalLoading").modal('hide');
@@ -272,12 +273,13 @@ $(document).ready(function(){
                 },
                 statusCode :{
                     200: function() {
-                        $("#myModalLoading").modal('hide');
-                        setTimeout(function(){}, 2000);
-                        $("#myModalOk").modal('show');
-                        console.log("success");
-                        $('#selectCategory').val('');
-                        $('#selectItem').val('');
+                        setTimeout(function(){
+                            $("#myModalLoading").modal('hide');
+                            $("#myModalOk").modal('show');
+                            console.log("success");
+                            $('#selectCategory').val('');
+                            $('#selectItem').val('');
+                        } ,2000);
                     },
                     401: function() {
                         $("#myModalLoading").modal('hide');

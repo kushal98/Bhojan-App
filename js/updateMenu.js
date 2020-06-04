@@ -119,12 +119,13 @@ $(document).ready(function(){
                 }),
                 statusCode :{
                     200: function() {
-                        $("#myModalLoading").modal('hide');
-                        setTimeout(function(){}, 2000);
-                        $("#myModalOk").modal('show');
-                        console.log("success");
-                        $('#selectCategory').val('');
-                        $('#updateCategoryInput').val('');
+                        setTimeout(function(){
+                            $("#myModalLoading").modal('hide');
+                            $("#myModalOk").modal('show');
+                            console.log("success");
+                            $('#selectCategory').val('');
+                            $('#updateCategoryInput').val('');
+                        },2000);
                     },
                     401: function() {
                         $("#myModalLoading").modal('hide');
@@ -287,14 +288,15 @@ $(document).ready(function(){
                 }),
                 statusCode :{
                     200: function() {
-                        $("#myModalLoading").modal('hide');
-                        setTimeout(function(){}, 2000);
-                        $("#myModalOk").modal('show');
-                        console.log("success");
-                        $('#selectCategory').val('');
-                        $('#selectItem').val('');
-                        $('#updateItemName').val('');
-                        $('#updateItemPrice').val('');
+                        setTimeout(function(){
+                            $("#myModalLoading").modal('hide');
+                            $("#myModalOk").modal('show');
+                            console.log("success");
+                            $('#selectCategory').val('');
+                            $('#selectItem').val('');
+                            $('#updateItemName').val('');
+                            $('#updateItemPrice').val('');
+                        },2000);
                     },
                     401: function() {
                         $("#myModalLoading").modal('hide');
