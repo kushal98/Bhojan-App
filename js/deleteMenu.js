@@ -115,6 +115,7 @@ $(document).ready(function(){
                 statusCode :{
                     200: function() {
                         $("#myModalLoading").modal('hide');
+                        setTimeout(function(){}, 2000);
                         $("#myModalOk").modal('show');
                         console.log("success");
                         $('#selectCategory').val('');
@@ -272,6 +273,7 @@ $(document).ready(function(){
                 statusCode :{
                     200: function() {
                         $("#myModalLoading").modal('hide');
+                        setTimeout(function(){}, 2000);
                         $("#myModalOk").modal('show');
                         console.log("success");
                         $('#selectCategory').val('');

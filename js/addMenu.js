@@ -47,6 +47,7 @@ $(document).ready(function(){
         e.stopPropagation();
 
         $("#myModalLoading").modal('show');
+
         if(navigator.onLine){
             $.ajax({
                 url:"https://bhojan.dekhlo.online:8080/api/v1/restaurant/category/",
@@ -60,6 +61,7 @@ $(document).ready(function(){
                 statusCode :{
                     200: function() {
                         $("#myModalLoading").modal('hide');
+                        setTimeout(function(){}, 2000);
                         $("#myModalOk").modal('show');
                         console.log("success");
                         $('#addCategoryInput').val('') ; 
@@ -82,7 +84,7 @@ $(document).ready(function(){
                 contentType:"application/json; charset=utf-8",
                 success: function(data, textStatus, jqXHR)
                 {
-                    
+
                 },
                 error: function (e)
                 {
@@ -203,6 +205,7 @@ $(document).ready(function(){
                 statusCode :{
                     200: function() {
                         $("#myModalLoading").modal('hide');
+                        setTimeout(function(){}, 2000);
                         $("#myModalOk").modal('show');
                         console.log("success");
                         $('#addItemName').val('');
@@ -229,8 +232,9 @@ $(document).ready(function(){
                 },
                 error: function (e)
                 {
-                console.log("error");
-                console.log(e);
+                    $("#myModalLoading").modal('hide');
+                    console.log("error");
+                    console.log(e);
                 }
             });
         }

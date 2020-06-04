@@ -44,7 +44,7 @@ $(document).ready(function(){
                         var ind = item.items.map(singleItemOfCategory);
                         ind.forEach(function addCat(a){
                             a.push(item.name);
-                        })
+                        });
                         allItems.push(ind);
                     }
                 }
