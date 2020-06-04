@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     function checkLogin() {
         if(!sessionStorage.getItem("authorization")){
-            window.location.pathname = "Catalog-App/index.html";
+            window.location.pathname = "Bhojan-App/index.html";
         }
      }
   
