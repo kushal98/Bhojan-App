@@ -1,12 +1,12 @@
 $(document).ready(function(){
 
-    // function checkLogin() {
-    //     if(!sessionStorage.getItem("authorization")){
-    //         window.location.pathname = "Catalog-App/index.html";
-    //     }
-    //  }
+    function checkLogin() {
+        if(!sessionStorage.getItem("authorization")){
+            window.location.pathname = "Catalog-App/index.html";
+        }
+     }
   
-    // checkLogin();
+    checkLogin();
 
     $("#logout").click(function(e){
         e.preventDefault();
@@ -88,7 +88,6 @@ $(document).ready(function(){
                 error: function (e)
                 {
                     console.log("error");
-                    alert("There was some error");
                     console.log(e);
                 }
             });
@@ -104,6 +103,8 @@ $(document).ready(function(){
         e.preventDefault();
         e.stopPropagation();
 
+        $("#myModalLoading").modal('show');
+
         if(navigator.onLine){
             $.ajax({
                 url:"https://bhojan.dekhlo.online:8080/api/v1/restaurant/category/" + $('#selectCategory').val(),
@@ -113,18 +114,23 @@ $(document).ready(function(){
                 },
                 statusCode :{
                     200: function() {
+                        $("#myModalLoading").modal('hide');
                         $("#myModalOk").modal('show');
                         console.log("success");
-                        setTimeout(function(){
-                            window.location.pathname = "Bhojan-App/html/deleteMenu.html";
-                        },2000);
+                        $('#selectCategory').val('');
                     },
                     401: function() {
+                        $("#myModalLoading").modal('hide');
                         window.location.pathname = "Bhojan-App/index.html";
                         sessionStorage.clear();
                     },
                     500: function(){
+                        $("#myModalLoading").modal('hide');
                         $("#myModalAdmin").modal('show');
+                    },
+                    400: function(){
+                        $("#myModalLoading").modal('hide');
+                        $("#myModal400").modal('show');
                     }
                 }
                 ,
@@ -135,9 +141,9 @@ $(document).ready(function(){
                 },
                 error: function (e)
                 {
-                console.log("error");
-                alert("There was some error");
-                console.log(e);
+                    $("#myModalLoading").modal('hide');
+                    console.log("error");
+                    console.log(e);
                 }
             });
         }
@@ -239,7 +245,6 @@ $(document).ready(function(){
                 error: function (e)
                 {
                     console.log("error");
-                    alert("There was some error");
                     console.log(e);
                 }
             });
@@ -255,6 +260,8 @@ $(document).ready(function(){
         e.preventDefault();
         e.stopPropagation();
 
+        $("#myModalLoading").modal('show');
+
         if(navigator.onLine){
             $.ajax({
                 url:"https://bhojan.dekhlo.online:8080/api/v1/restaurant/category/" + $('#selectCategory').val() + "/item/" + $('#selectItem').val(),
@@ -264,18 +271,24 @@ $(document).ready(function(){
                 },
                 statusCode :{
                     200: function() {
+                        $("#myModalLoading").modal('hide');
                         $("#myModalOk").modal('show');
                         console.log("success");
-                        setTimeout(function(){
-                            window.location.pathname = "Bhojan-App/html/deleteMenu.html";
-                        },2000);
+                        $('#selectCategory').val('');
+                        $('#selectItem').val('');
                     },
                     401: function() {
+                        $("#myModalLoading").modal('hide');
                         window.location.pathname = "Bhojan-App/index.html";
                         sessionStorage.clear();
                     },
                     500: function(){
+                        $("#myModalLoading").modal('hide');
                         $("#myModalAdmin").modal('show');
+                    },
+                    400: function(){
+                        $("#myModalLoading").modal('hide');
+                        $("#myModal400").modal('show');
                     }
                 }
                 ,
@@ -286,8 +299,8 @@ $(document).ready(function(){
                 },
                 error: function (e)
                 {
+                    $("#myModalLoading").modal('hide');
                     console.log("error");
-                    alert("There was some error");
                     console.log(e);
                 }
             });
