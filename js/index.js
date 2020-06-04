@@ -7,7 +7,7 @@ if(navigator.onLine)
 
         function checkLogin() {
             if(sessionStorage.getItem("authorization")){
-                window.location.pathname = "Catalog-App/html/menu.html";
+                window.location.pathname = "Bhojan-App/html/menu.html";
             }
          }
       
