@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     var auth_decode = JSON.parse(atob(sessionStorage.getItem("authorization").split(".")[1]));
     var res_id = auth_decode['sub'];
-    var qrcode_text = "res" + res_id
+    var qrcode_text = res_id
     
     $('#qr').qrcode({text: qrcode_text , width:300 , height: 300});
 

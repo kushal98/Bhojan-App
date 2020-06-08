@@ -52,15 +52,19 @@ $(document).ready(function(){
                 data.forEach(singleItem)
                 var m = 1;
 
+                console.log(allItems);
+
                 for(var i = 0; i < allItems.length; i++){
                     for(var j=0 ; j< allItems[i].length; j++){
-                        table_row += 
-                        '<tr>'+
-                            '<td>'+ m++ +'</td>'+
-                            '<td>'+allItems[i][j][2]+'</td>'+
-                            '<td>'+allItems[i][j][0]+'</td>'+
-                            '<td>'+allItems[i][j][1]+'</td>'+
-                        '</tr>';
+                        if( allItems[i][j][2] !== "" && allItems[i][j][0] !== "" ){
+                            table_row += 
+                            '<tr>'+
+                                '<td>'+ m++ +'</td>'+
+                                '<td>'+allItems[i][j][2]+'</td>'+
+                                '<td>'+allItems[i][j][0]+'</td>'+
+                                '<td>'+allItems[i][j][1]+'</td>'+
+                            '</tr>';
+                        }
                     }
                   }
                 

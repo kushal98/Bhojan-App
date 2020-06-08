@@ -28,7 +28,6 @@ if(navigator.onLine)
                         console.log("success");
                    },
                    401: function() {
-                        window.location.pathname = "Bhojan-App/index.html";
                         sessionStorage.clear();
                    },
                    500: function(){
@@ -49,8 +48,7 @@ if(navigator.onLine)
                 },
                 error: function (e)
                 {
-                    console.log("error");
-                    console.log(e);
+                    $("#myModalLogin").modal('show');
                 }
             });
         });
