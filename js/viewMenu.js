@@ -49,7 +49,7 @@ $(document).ready(function(){
                     }
                 }
 
-                data.forEach(singleItem)
+                data.menu.forEach(singleItem)
                 var m = 1;
 
                 console.log(allItems);
